@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Created by wfsovereign on 15-3-21.
  */
 public class DataFactory {
-    public int[] personInfo;
+    private int[] personInfo;
     private String[] person;
 
     public String getDayInfo(){
@@ -23,7 +23,7 @@ public class DataFactory {
         return person;
     }
 
-    public void getPersonInfo(){
+    public void receivePersonInfo(){
         Scanner input = new Scanner(System.in);
         int[] personInfo = new int[7];
 
@@ -39,14 +39,21 @@ public class DataFactory {
             i++;
         }
         System.out.println("输入完毕，谢谢配合");
+        displayInput(personInfo);
+        this.personInfo = personInfo;
+    }
+
+    public int[] getPersonInfo(){
+        return this.personInfo;
+    }
+
+    private void displayInput(int[] personInfo) {
         System.out.println("您输入的结果为：");
         String inputResult="";
         TransferInput transferInput = new TransferInput();
         for (int j = 0; j < 7; j++) {
             inputResult += person[j] + transferInput.transfer(personInfo[j])+"\n";
         }
-
         System.out.println(inputResult);
-        this.personInfo = personInfo;
     }
 }

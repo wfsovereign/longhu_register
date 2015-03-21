@@ -10,8 +10,8 @@ public class Client {
 
 
         DataFactory dataFactory = new DataFactory();
-        dataFactory.getPersonInfo();
-        databaseAction.insert(dataFactory.getDayInfo(),dataFactory.personInfo);
+        dataFactory.receivePersonInfo();
+        databaseAction.insert(dataFactory.getDayInfo(),dataFactory.getPersonInfo());
         databaseAction.allView();
 
     }
