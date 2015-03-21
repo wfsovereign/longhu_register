@@ -24,27 +24,28 @@ public class JdbcAction {
         }
         return conn;
     }
-    public void insert() throws SQLException {
+    public void insert(String data,int[] personInfo) throws SQLException {
         conn = JdbcAction.getConnection();
-        if( conn != null ){
-            System.out.println( "MySQL 数据库连接成功！" );
-        }else{
-            System.out.println( "MySQL 数据库连接失败！" );
-        }
+
         st = conn.createStatement();
+//        String insertInfo ="INSERT INTO record VALUE ("+data;
+//        for (int i = 0; i < 7; i++) {
+//            insertInfo += ","+personInfo[i];
+//        }
+        //"INSERT INTO record VALUE ("+data+",0,0,0,0,0,0,0)"
+        st.executeUpdate("INSERT INTO record VALUE ("+data+",personInfo[0],personInfo[1],personInfo[3],personInfo[4]," +
+                "personInfo[5],personInfo[6],personInfo[7])");
+
     }
 
     public void allView() throws SQLException {
         conn = JdbcAction.getConnection();
-        if( conn != null ){
-            System.out.println( "MySQL 数据库连接成功！" );
-        }else{
-            System.out.println( "MySQL 数据库连接失败！" );
-        }
+
         st = conn.createStatement();
         ResultSet res = st.executeQuery("SELECT * FROM record");
         while(res.next()){
-            System.out.println("time:"+res.getDate("time")+"\t"+"fyqj:"+res.getInt("fyqj")
+            System.out.println("time:"+res.getDate("time")
+                    +"\t"+"fyqj:"+res.getInt("fyqj")
                     +"\t"+"wzb:"+res.getInt("wzb")
                     +"\t"+"zp:"+res.getInt("zp")
                     +"\t"+"zpy:"+res.getInt("zpy")
@@ -53,6 +54,10 @@ public class JdbcAction {
                     +"\t"+"wx:"+res.getInt("wx"));
         }
         res.close();
+    }
+
+    public void update(){
+        conn = JdbcAction.getConnection();
 
     }
 
