@@ -26,7 +26,7 @@ public class DataFactory {
     public void receivePersonInfo(){
         Scanner input = new Scanner(System.in);
         int[] personInfo = new int[7];
-
+        getPerson();
         for (int i = 0; i < 7; i++) {
             System.out.println((i+1)+"："+person[i]);
         }
