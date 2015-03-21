@@ -1,5 +1,4 @@
 import java.sql.SQLException;
-import java.util.Date;
 
 /**
  * Created by wfsovereign on 15-3-21.
@@ -9,8 +8,11 @@ public class Client {
         JdbcAction databaseAction = new JdbcAction();
         databaseAction.allView();
 
+
         DataFactory dataFactory = new DataFactory();
         dataFactory.getPersonInfo();
-//        databaseAction.insert(dataFactory.getDayInfo(),dataFactory.personInfo);
+        databaseAction.insert(dataFactory.getDayInfo(),dataFactory.personInfo);
+        databaseAction.allView();
+
     }
 }
