@@ -33,7 +33,7 @@ public class DataFactory {
         System.out.println("下面请按序输入人员到位情况：（输入1/0,1表示到，0表示未到）");
         int i=0;
         while (i<7){
-            System.out.println("现在请输入编号为 "+ (i+1) +" 的同志到位情况：");
+            System.out.println("现在请输入编号为 "+ (i+1) +" `"+person[i] +" 的同志到位情况：");
             personInfo[i] = input.nextInt();
             System.out.println(i);
             i++;

@@ -5,7 +5,7 @@ import java.sql.*;
  */
 
 
-public class JdbcAction {
+public class JDBCAction {
     static Connection conn;
 
     static Statement st;
@@ -23,7 +23,7 @@ public class JdbcAction {
         return conn;
     }
     public void insert(String data,int[] personInfo) throws SQLException {
-        conn = JdbcAction.getConnection();
+        conn = JDBCAction.getConnection();
 
         st = conn.createStatement();
         String insertInfo ="INSERT INTO record VALUE ("+data;
@@ -31,7 +31,6 @@ public class JdbcAction {
             insertInfo += ","+personInfo[i];
         }
         insertInfo += ")";
-        System.out.println(insertInfo);
 
         //"INSERT INTO record VALUE ("+data+",0,0,0,0,0,0,0)"
         st.executeUpdate(insertInfo);
@@ -39,7 +38,7 @@ public class JdbcAction {
     }
 
     public void allView() throws SQLException {
-        conn = JdbcAction.getConnection();
+        conn = JDBCAction.getConnection();
 
         st = conn.createStatement();
         System.out.println("*********************************");
@@ -62,12 +61,12 @@ public class JdbcAction {
     }
 
     public void update(){
-        conn = JdbcAction.getConnection();
+        conn = JDBCAction.getConnection();
 
     }
 
 //    public static void main(String[] args) throws SQLException {
-//        conn = JdbcAction.getConnection();
+//        conn = JDBCAction.getConnection();
 //        if( conn != null ){
 //            System.out.println( "MySQL 数据库连接成功！" );
 //        }else{

@@ -5,7 +5,7 @@ import java.sql.SQLException;
  */
 public class Client {
     public static void main(String[] args) throws SQLException {
-        JdbcAction databaseAction = new JdbcAction();
+        JDBCAction databaseAction = new JDBCAction();
         databaseAction.allView();
 
 
